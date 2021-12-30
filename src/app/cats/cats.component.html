@@ -1,0 +1,25 @@
+<div class="col-6 col-sm-6 col-lg-6">
+    <div *ngIf='categories' class="float-left col-6" style="padding-bottom: 5px;text-align: center;">
+        <select [(ngModel)]='categories.id' (ngModelChange)='showImages($event)'> 
+            <option *ngFor='let category of categories' value=" {{category.id}} ">
+                <button type="button" >
+                    {{category.name | titlecase}}
+                </button>
+            </option>
+        </select>
+    </div>
+    
+    
+    <div class="grid-container" style="text-align: center;">
+    <span class="grid-item" *ngFor='let cat of imageArray'>
+        <span class="" >
+          <img src={{cat.url}} transformation={transform} alt="cat image" height="400" width="400">
+        </span>
+        
+    </span>
+    </div>
+</div>
+    
+
+
+
